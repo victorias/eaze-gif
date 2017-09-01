@@ -11,6 +11,22 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "precommit":
+      "lint-staged && yarn lint && yarn flow && react-scripts test --env=jsdom --coverage",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.54.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.6.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write --trailing-comma=es5",
+      "git add"
+    ]
   }
 }
