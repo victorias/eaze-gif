@@ -26,11 +26,7 @@ export const getTrending = (): ThunkAction => async (dispatch, getState) => {
     const json = await response.json();
     dispatch(insertTrending(json.data));
   } catch (e) {
-    alert('error in getTrending');
-    dispatch({
-      type: 'ERROR',
-      name: 'error',
-    });
+    throw e;
   }
 };
 
