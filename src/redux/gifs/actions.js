@@ -19,7 +19,6 @@ type ThunkAction = (dispatch: Dispatch, getState: GetState) => any; // eslint-di
 type Dispatch = (action: Action | ThunkAction) => any;
 
 export const getTrending = (): ThunkAction => async (dispatch, getState) => {
-  dispatch();
   try {
     const response = await fetch(
       giphyApi.getTrending('735850dd359842089bfe0e37744e4d6d')
