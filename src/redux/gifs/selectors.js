@@ -19,8 +19,11 @@ export const getGifObjFromId = (id: string) => (state: RootStore) => {
   return state.gifs.trendingGifs.filter(gif => gif.id === id)[0];
 };
 
-export const getTrendingImgFromId = (id: string) =>
+export const getTrendingStillFromId = (id: string) =>
   createSelector(
     getGifObjFromId(id),
     gifObj => gifObj.images.fixed_height_still.url
   );
+
+export const getTrendingGifFromId = (id: string) =>
+  createSelector(getGifObjFromId(id), gifObj => gifObj.images.fixed_height.url);

@@ -1,12 +1,13 @@
 // @flow
 
 import { connect } from 'react-redux';
-import Gif from '../components/Gif';
+import TrendingGif from '../components/TrendingGif';
 
 import * as selectors from '../redux/gifs/selectors';
 
 const mapStateToProps = (state, props) => ({
-  url: selectors.getTrendingImgFromId(props.id)(state),
+  stillUrl: selectors.getTrendingStillFromId(props.id)(state),
+  url: selectors.getTrendingGifFromId(props.id)(state),
 });
 
-export default connect(mapStateToProps)(Gif);
+export default connect(mapStateToProps)(TrendingGif);
