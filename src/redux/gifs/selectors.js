@@ -27,3 +27,6 @@ export const getTrendingStillFromId = (id: string) =>
 
 export const getTrendingGifFromId = (id: string) =>
   createSelector(getGifObjFromId(id), gifObj => gifObj.images.fixed_height.url);
+
+export const getOriginalGifFromId = (id: string) =>
+  createSelector(getGifObjFromId(id), gifObj => gifObj.images.original.url);
