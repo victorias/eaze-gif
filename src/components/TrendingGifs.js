@@ -12,10 +12,13 @@ type Props = {
 };
 
 const Container = styled.div`
+  flex: 1 0 0;
+  overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding-right: 50px;
 `;
 
 const GifContainer = styled.div`

@@ -19,6 +19,8 @@ const Container = styled.div`
   flex: 0 0 auto;
 `;
 
+const Img = styled.img`flex: 0 0 auto;`;
+
 class TrendingGif extends PureComponent<Props, State> {
   state = {
     isHovering: false,
@@ -41,9 +43,9 @@ class TrendingGif extends PureComponent<Props, State> {
     return (
       <Container onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
         {state.isHovering ? (
-          <img src={props.url} alt="gif" />
+          <Img src={props.url} alt="gif" />
         ) : (
-          <img src={props.stillUrl} alt="still gif" />
+          <Img src={props.stillUrl} alt="still gif" />
         )}
       </Container>
     );
