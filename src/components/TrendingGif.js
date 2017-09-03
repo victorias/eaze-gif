@@ -8,7 +8,7 @@ import Modal from './Modal';
 type Props = {
   id: string,
   stillUrl: string,
-  url: string,
+  previewUrl: string,
   originalUrl: string,
 };
 
@@ -54,7 +54,7 @@ class TrendingGif extends PureComponent<Props, State> {
         }}
       >
         {state.isHovering ? (
-          <Img src={props.url} alt="gif" />
+          <Img src={props.previewUrl} alt="gif" />
         ) : (
           <Img src={props.stillUrl} alt="still gif" />
         )}
