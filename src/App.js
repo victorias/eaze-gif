@@ -10,14 +10,12 @@ const Container = styled.div`
   overflow: hidden;
   height: 100vh;
   flex-direction: column;
-  padding-left: 50px;
 `;
 
 const Header = styled.div`
   display: flex;
   flex: 0 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 5vh 10vw;
   font-size: 40px;
 `;
 

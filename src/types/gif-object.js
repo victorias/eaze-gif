@@ -1,6 +1,6 @@
 // @flow
 
-type FixedHeight = {
+export type FixedHeight = {
   url: string,
   width: string,
   height: string,
@@ -20,7 +20,7 @@ type FixedHeightDownsampled = {
   webp_size: string,
 };
 
-type FixedHeightStill = {
+export type FixedHeightStill = {
   url: string,
   width: string,
   height: string,
@@ -32,7 +32,7 @@ type Looping = {
   mp4_size: string,
 };
 
-type Original = {
+export type Original = {
   url: string,
   width: string,
   height: string,

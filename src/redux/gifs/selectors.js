@@ -15,18 +15,20 @@ export const getTrendingList = (state: RootStore) => {
   });
 };
 
-export const getGifObjFromId = (id: string) => (state: RootStore) => {
-  return state.gifs.trendingGifs.filter(gif => gif.id === id)[0];
-};
+export const getTrendingGifObjList = (state: RootStore) =>
+  state.gifs.trendingGifs;
 
-export const getTrendingStillFromId = (id: string) =>
+export const getGifFromId = (id: string) =>
   createSelector(
-    getGifObjFromId(id),
-    gifObj => gifObj.images.fixed_height_still.url
+    getTrendingGifObjList,
+    gifList => gifList.filter(gif => gif.id === id)[0]
   );
 
-export const getTrendingGifFromId = (id: string) =>
-  createSelector(getGifObjFromId(id), gifObj => gifObj.images.fixed_height.url);
+export const getPreviewStillFromId = (id: string) =>
+  createSelector(getGifFromId(id), gifObj => gifObj.images.fixed_height_still);
+
+export const getPreviewGifFromId = (id: string) =>
+  createSelector(getGifFromId(id), gifObj => gifObj.images.fixed_height);
 
 export const getOriginalGifFromId = (id: string) =>
-  createSelector(getGifObjFromId(id), gifObj => gifObj.images.original.url);
+  createSelector(getGifFromId(id), gifObj => gifObj.images.original);

@@ -18,13 +18,18 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-right: 50px;
+  padding-left: 10vw;
+  padding-right: 10vw;
 `;
 
 const GifContainer = styled.div`
   flex: 0 0 auto;
   display: flex;
   margin: 0.5vw;
+
+  @media (max-width: 480px) {
+    margin: 0.5vw auto;
+  }
 `;
 
 class TrendingGifs extends PureComponent<Props> {

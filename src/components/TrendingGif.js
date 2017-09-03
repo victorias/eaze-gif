@@ -2,14 +2,21 @@
 
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import FontAwesome from 'react-fontawesome';
+
+import type {
+  FixedHeight,
+  FixedHeightStill,
+  Original,
+} from '../types/gif-object';
 
 import Modal from './Modal';
 
 type Props = {
   id: string,
-  stillUrl: string,
-  previewUrl: string,
-  originalUrl: string,
+  still: FixedHeightStill,
+  preview: FixedHeight,
+  original: Original,
 };
 
 type State = {
@@ -21,9 +28,37 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex: 0 0 auto;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-const Img = styled.img`flex: 0 1 auto;`;
+const DetailRow = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  margin-top: 10px;
+  align-items: center;
+`;
+
+const DimensionLabel = styled.div`
+  margin-right: auto;
+  color: #ffffff;
+`;
+
+const Icon = styled(FontAwesome)`
+  color: #ffffff;
+  margin-left: 5px;
+  cursor: pointer;
+`;
+
+const Img = styled.img`
+  max-width: 80vw;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+`;
 
 class TrendingGif extends PureComponent<Props, State> {
   state = {
@@ -54,9 +89,19 @@ class TrendingGif extends PureComponent<Props, State> {
         }}
       >
         {state.isHovering ? (
-          <Img src={props.previewUrl} alt="gif" />
+          <Img
+            src={props.preview.url}
+            alt="preview gif"
+            width={props.preview.width}
+            height={props.preview.height}
+          />
         ) : (
-          <Img src={props.stillUrl} alt="still gif" />
+          <Img
+            src={props.still.url}
+            alt="still"
+            width={props.still.width}
+            height={props.still.height}
+          />
         )}
 
         {state.isModalOpen && (
@@ -64,7 +109,14 @@ class TrendingGif extends PureComponent<Props, State> {
             isOpen={state.isModalOpen}
             onRequestClose={() => this.setState({ isModalOpen: false })}
           >
-            <Img src={props.originalUrl} alt="original gif" />
+            <Img src={props.original.url} alt="original gif" />
+            <DetailRow>
+              <DimensionLabel>
+                Dimensions: {props.original.width} x {props.original.height}px
+              </DimensionLabel>
+              <Icon name="download" alt="Download as MP4" />
+              <Icon name="clipboard" alt="Copy a link to the GIF " />
+            </DetailRow>
           </Modal>
         )}
       </Container>
