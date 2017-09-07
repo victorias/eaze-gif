@@ -1,7 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import TrendingGif from '../containers/TrendingGif';
 
