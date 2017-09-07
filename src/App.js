@@ -23,7 +23,7 @@ class App extends Component<{}, void> {
   render() {
     return (
       <Container>
-        <Header>powered by giphy</Header>
+        <Header>#trending on giphy</Header>
         <TrendingGifs />
       </Container>
     );
