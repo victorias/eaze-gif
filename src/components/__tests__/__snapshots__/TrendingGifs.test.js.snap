@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrendingGifs renders an empty gif list 1`] = `
+<div
+  className="sc-EHOje bbZvAR"
+/>
+`;
+
+exports[`TrendingGifs renders loading 1`] = `
+<div
+  className="sc-EHOje bbZvAR"
+/>
+`;

@@ -27,7 +27,8 @@
     "flow-bin": "^0.54.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
-    "prettier": "^1.6.1"
+    "prettier": "^1.6.1",
+    "react-test-renderer": "^15.6.1"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

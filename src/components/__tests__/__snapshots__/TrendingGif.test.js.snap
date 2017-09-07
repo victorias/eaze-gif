@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrendingGif renders 1`] = `
+<div
+  className="sc-bdVaJa gtnNos"
+  onClick={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+>
+  <img
+    alt="still"
+    className="sc-ifAKCX bTAHyA"
+    height="100"
+    src="gif-url"
+    width="100"
+  />
+</div>
+`;

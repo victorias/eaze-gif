@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders when closed 1`] = `null`;
+
+exports[`Modal renders when open 1`] = `null`;

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import ReactModal from 'react-modal';
-import styled from 'styled-components';
 
 import './Modal.css';
 

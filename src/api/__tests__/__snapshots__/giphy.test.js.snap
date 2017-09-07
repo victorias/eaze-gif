@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`giphy api tests .getTrending 1`] = `"https://api.giphy.com/v1/gifs/trending?api_key=apiKey&limit=25&rating=G&offset=0"`;
+
+exports[`giphy api tests .getTrending 2`] = `"https://api.giphy.com/v1/gifs/trending?api_key=apiKey&limit=25&rating=G&offset=10"`;

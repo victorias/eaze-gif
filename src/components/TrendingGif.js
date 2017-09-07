@@ -60,6 +60,8 @@ const Img = styled.img`
   object-fit: contain;
 
   background-image: url('http://bestanimations.com/Science/Gears/loadinggears/loading-gear.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
 `;
 
 class TrendingGif extends PureComponent<Props, State> {

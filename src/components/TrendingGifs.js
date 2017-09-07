@@ -47,7 +47,7 @@ class TrendingGifs extends PureComponent<Props> {
   render() {
     const { props } = this;
 
-    if (props.isLoading) {
+    if (props.isLoading || props.gifIds.length === 0) {
       return <Container isLoading={true} />;
     }
 
