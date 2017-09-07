@@ -58,6 +58,8 @@ const Img = styled.img`
   height: auto;
   width: auto;
   object-fit: contain;
+
+  background-image: url('http://bestanimations.com/Science/Gears/loadinggears/loading-gear.gif');
 `;
 
 class TrendingGif extends PureComponent<Props, State> {
@@ -109,7 +111,12 @@ class TrendingGif extends PureComponent<Props, State> {
             isOpen={state.isModalOpen}
             onRequestClose={() => this.setState({ isModalOpen: false })}
           >
-            <Img src={props.original.url} alt="original gif" />
+            <Img
+              src={props.original.url}
+              alt="original gif"
+              height={props.original.height}
+              width={props.original.width}
+            />
             <DetailRow>
               <DimensionLabel>
                 Dimensions: {props.original.width} x {props.original.height}px

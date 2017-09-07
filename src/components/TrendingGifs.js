@@ -1,7 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import TrendingGif from '../containers/TrendingGif';
 
@@ -20,6 +20,12 @@ const Container = styled.div`
   justify-content: space-between;
   padding-left: 10vw;
   padding-right: 10vw;
+
+  ${props =>
+    props.isLoading &&
+    `background-image: url('http://bestanimations.com/Science/Gears/loadinggears/loading-gear.gif');
+    background-repeat: no-repeat;
+    background-position: center center;`};
 `;
 
 const GifContainer = styled.div`
@@ -42,7 +48,7 @@ class TrendingGifs extends PureComponent<Props> {
     const { props } = this;
 
     if (props.isLoading) {
-      return <Container>is loading</Container>;
+      return <Container isLoading={true} />;
     }
 
     return (
