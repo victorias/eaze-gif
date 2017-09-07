@@ -114,8 +114,9 @@ class TrendingGif extends PureComponent<Props, State> {
               <DimensionLabel>
                 Dimensions: {props.original.width} x {props.original.height}px
               </DimensionLabel>
-              <Icon name="download" alt="Download as MP4" />
-              <Icon name="clipboard" alt="Copy a link to the GIF " />
+              <a href={props.original.mp4} download>
+                <Icon name="download" alt="Download as MP4" />
+              </a>
             </DetailRow>
           </Modal>
         )}
