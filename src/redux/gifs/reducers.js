@@ -2,30 +2,30 @@
 
 import type { GifObject } from '../../types/gif-object';
 
-import type { Action, InsertTrendingAction } from './actions';
+import type { Action, InsertAction } from './actions';
 
 export type State = {
-  +trendingGifs: Array<GifObject>,
+  +gifs: Array<GifObject>,
   +loading: boolean,
 };
 
 const initialState = {
-  trendingGifs: [],
+  gifs: [],
   loading: true,
 };
 
-const insertTrending = (state: State, action: InsertTrendingAction) => {
+const insert = (state: State, action: InsertAction) => {
   return {
     ...state,
-    trendingGifs: [...state.trendingGifs, ...action.trendingGifs],
+    gifs: action.gifs,
     loading: false,
   };
 };
 
 export default (state: State = initialState, action: Action) => {
   switch (action.type) {
-    case 'INSERT_TRENDING':
-      return insertTrending(state, action);
+    case 'INSERT':
+      return insert(state, action);
     default:
       return state;
   }

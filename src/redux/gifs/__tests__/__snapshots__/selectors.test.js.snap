@@ -192,6 +192,12 @@ Object {
 }
 `;
 
+exports[`gif selectors .getGifIds 1`] = `
+Array [
+  "3o6nUSu6ZB82udVAUo",
+]
+`;
+
 exports[`gif selectors .getOriginalGifFromId 1`] = `
 Object {
   "frames": "12",
@@ -420,12 +426,6 @@ Array [
     },
     "username": "maroon5",
   },
-]
-`;
-
-exports[`gif selectors .getTrendingList 1`] = `
-Array [
-  "3o6nUSu6ZB82udVAUo",
 ]
 `;
 

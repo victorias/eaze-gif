@@ -3,13 +3,13 @@
 import reducers from '../reducers';
 
 describe('gif reducers', () => {
-  it('.insertTrending', () => {
+  it('.insert', () => {
     let state;
     state = reducers(
-      { trendingGifs: [], loading: true },
+      { gifs: [], loading: true },
       {
-        type: 'INSERT_TRENDING',
-        trendingGifs: [
+        type: 'INSERT',
+        gifs: [
           {
             type: 'gif',
             id: '3o6nUSu6ZB82udVAUo',
@@ -241,7 +241,7 @@ describe('gif reducers', () => {
       }
     );
     expect(state).toEqual({
-      trendingGifs: [
+      gifs: [
         {
           type: 'gif',
           id: '3o6nUSu6ZB82udVAUo',

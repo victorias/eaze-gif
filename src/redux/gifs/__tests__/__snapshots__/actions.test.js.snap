@@ -2,9 +2,9 @@
 
 exports[`gif actions .getTrending should return a function 1`] = `[Function]`;
 
-exports[`gif actions .insertTrending 1`] = `
+exports[`gif actions .insert 1`] = `
 Object {
-  "trendingGifs": Array [
+  "gifs": Array [
     Object {
       "bitly_gif_url": "http://gph.is/2x2b2gw",
       "bitly_url": "http://gph.is/2x2b2gw",
@@ -195,6 +195,8 @@ Object {
       "username": "maroon5",
     },
   ],
-  "type": "INSERT_TRENDING",
+  "type": "INSERT",
 }
 `;
+
+exports[`gif actions .search should return a function 1`] = `[Function]`;

@@ -3,3 +3,7 @@
 exports[`giphy api tests .getTrending 1`] = `"https://api.giphy.com/v1/gifs/trending?api_key=apiKey&limit=25&rating=G&offset=0"`;
 
 exports[`giphy api tests .getTrending 2`] = `"https://api.giphy.com/v1/gifs/trending?api_key=apiKey&limit=25&rating=G&offset=10"`;
+
+exports[`giphy api tests .search 1`] = `"https://api.giphy.com/v1/gifs/search?api_key=apiKey&q=q&limit=25&offset=0&rating=G&lang=en"`;
+
+exports[`giphy api tests .search 2`] = `"https://api.giphy.com/v1/gifs/search?api_key=apiKey&q=q&limit=25&offset=0&rating=G&lang=en"`;

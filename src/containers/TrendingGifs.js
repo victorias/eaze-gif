@@ -7,7 +7,7 @@ import * as actions from '../redux/gifs/actions';
 import * as selectors from '../redux/gifs/selectors';
 
 const mapStateToProps = state => ({
-  gifIds: selectors.getTrendingList(state),
+  gifIds: selectors.getGifIds(state),
   isLoading: selectors.isLoading(state),
 });
 

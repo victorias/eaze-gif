@@ -6,7 +6,7 @@ describe('gif selectors', () => {
   const id = '3o6nUSu6ZB82udVAUo';
   const state = {
     gifs: {
-      trendingGifs: [
+      gifs: [
         {
           type: 'gif',
           id: '3o6nUSu6ZB82udVAUo',
@@ -235,8 +235,8 @@ describe('gif selectors', () => {
     expect(selectors.isLoading(state)).toMatchSnapshot();
   });
 
-  it('.getTrendingList', () => {
-    expect(selectors.getTrendingList(state)).toMatchSnapshot();
+  it('.getGifIds', () => {
+    expect(selectors.getGifIds(state)).toMatchSnapshot();
   });
 
   it('.getTrendingGifObjList', () => {

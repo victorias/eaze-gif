@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Search from './containers/Search';
 import TrendingGifs from './containers/TrendingGifs';
 
 const Container = styled.div`
@@ -23,7 +24,9 @@ class App extends Component<{}, void> {
   render() {
     return (
       <Container>
-        <Header>#trending on giphy</Header>
+        <Header>
+          #<Search /> on giphy
+        </Header>
         <TrendingGifs />
       </Container>
     );

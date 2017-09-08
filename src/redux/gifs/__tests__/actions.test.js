@@ -22,17 +22,44 @@ describe('gif actions', () => {
       expect(actions.getTrending()).toBeInstanceOf(Function);
     });
 
-    it('should attempt a fetch and dispatch insertTrending', async () => {
+    it('should attempt a fetch and dispatch insert', async () => {
       await actions.getTrending()(dispatch);
       expect(window.fetch).toBeCalled();
       expect(dispatch).toBeCalledWith({
-        trendingGifs: ['data'],
-        type: 'INSERT_TRENDING',
+        gifs: ['data'],
+        type: 'INSERT',
       });
     });
   });
 
-  it('.insertTrending', () => {
+  describe('.search', () => {
+    let dispatch;
+    const q = 'q';
+    beforeAll(() => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () =>
+            Promise.resolve({
+              data: ['data'],
+            }),
+        })
+      );
+      dispatch = jest.fn(n => n);
+    });
+
+    it('should return a function', () => {
+      expect(actions.search(q)).toMatchSnapshot();
+      expect(actions.search(q)).toBeInstanceOf(Function);
+    });
+
+    it('should attempt a fetch and dispatch insert', async () => {
+      await actions.search(q)(dispatch);
+      expect(window.fetch).toBeCalled();
+      expect(dispatch).toBeCalledWith({ gifs: ['data'], type: 'INSERT' });
+    });
+  });
+
+  it('.insert', () => {
     const trendingGifs = [
       {
         type: 'gif',
@@ -239,6 +266,6 @@ describe('gif actions', () => {
       },
     ];
 
-    expect(actions.insertTrending(trendingGifs)).toMatchSnapshot();
+    expect(actions.insert(trendingGifs)).toMatchSnapshot();
   });
 });

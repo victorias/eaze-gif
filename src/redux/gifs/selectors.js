@@ -9,14 +9,13 @@ type RootStore = {
 
 export const isLoading = (state: RootStore) => state.gifs.loading;
 
-export const getTrendingList = (state: RootStore) => {
-  return state.gifs.trendingGifs.map(gif => {
+export const getGifIds = (state: RootStore) => {
+  return state.gifs.gifs.map(gif => {
     return gif.id;
   });
 };
 
-export const getTrendingGifObjList = (state: RootStore) =>
-  state.gifs.trendingGifs;
+export const getTrendingGifObjList = (state: RootStore) => state.gifs.gifs;
 
 export const getGifFromId = (id: string) =>
   createSelector(
