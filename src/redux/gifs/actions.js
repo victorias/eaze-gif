@@ -13,7 +13,7 @@ export type Action = InsertAction;
 
 type GetState = () => State;
 type ThunkAction = (dispatch: Dispatch, getState?: GetState) => any; // eslint-disable-line no-use-before-define
-type Dispatch = (action: Action | ThunkAction) => any;
+export type Dispatch = (action: Action | ThunkAction) => any;
 
 const API_KEY = '735850dd359842089bfe0e37744e4d6d';
 

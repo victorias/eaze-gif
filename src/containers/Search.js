@@ -5,9 +5,11 @@ import Search from '../components/Search';
 
 import * as actions from '../redux/gifs/actions';
 
+import type { Dispatch } from '../redux/gifs/actions';
+
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   search: query => dispatch(actions.search(query)),
   getTrending: () => dispatch(actions.getTrending()),
 });
